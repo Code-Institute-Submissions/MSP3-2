@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+ <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="sass.html"><i class="material-icons">search</i></a></li>
+        <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
+        <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
+        <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
+      </ul>
+    </div>
+  </nav>
+  {% for venture in venture %}
+   <ul class="collapsible popout">
+    <li>
+      <div class="collapsible-header"><span class="material-icons">
+open_in_full
+</span>{{venture.Business_name}}</div>
+      <div class="collapsible-body"><span> Net worth: {{venture.net_worth}}<br>
+       Amount needed to invest: {{venture.Min_investment}}<br>
+       Returns: {{venture.percentage_return}}.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+  </ul>
+        
+    
+       
+       
+        
+    {% endfor %}
+
+{% endblock %}
