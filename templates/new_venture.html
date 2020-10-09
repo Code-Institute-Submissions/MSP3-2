@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>New Business</h3>
+<div class="row">
+	<form action="{{url_for('insert_venture')}}" method="POST" class="col s12">
+		<div class="row">
+			<div class="input-field col s6">
+				<input placeholder="Tesco " id="Business_name" name="Business_name" type="text" class="validate">
+				<label for="Business_name">Business Name</label>
+			</div>
+			<div class="input-field col s6">
+				<input id="net_worth" type="text" name="net_worth" class="validate">
+				<label for="net_worth">Net worth</label>
+			</div>
+		</div>
+		
+			<div class="input-field col s6">
+				<span class="material-icons">credit_card</span>
+				<input id="Min_investment" type="text" name="Min_investment" class="validate">
+				<label for="Min_investment">Money needed</label>
+			</div>
+		
+
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="email" type="email" class="validate">
+				<label for="email">Email</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s6">
+				<input id="percentage_return" type="text" name="percentage_return" class="validate">
+				<label for="percentage_return"></label>
+			</div>
+		</div>
+        <div class="row">
+         <button class="btn waves-effect waves-light" type="submit" name="action">Send request<i class="material-icons right">send</i>
+  </button>
+        </div>
+	</form>
+</div>
+
+
+
+{% endblock %}
