@@ -1,32 +1,134 @@
-{% extends 'base.html' %}
-{% block content %}
- <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="sass.html"><i class="material-icons">search</i></a></li>
-        <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
-        <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
-        <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
-      </ul>
-    </div>
-  </nav>
-  {% for venture in venture %}
-   <ul class="collapsible popout">
-    <li>
-      <div class="collapsible-header"><span class="material-icons">
-open_in_full
-</span>{{venture.Business_name}}</div>
-      <div class="collapsible-body"><span> Net worth: {{venture.net_worth}}<br>
-       Amount needed to invest: {{venture.Min_investment}}<br>
-       Returns: {{venture.percentage_return}}.</span></div>
-    </li>
-  </ul>
+{% extends 'base.html' %} {% block content %}
+<div class="grid-container">
+ {% for venture in venture %}
+
+{% if loop.index0 % 3 == 0 %}
+  <div class="row">
+  
+    <div class="col-lg-3">
+      <div class="card small">
+     
+        <div class="card-image">
+          <img src="static/images/coffeeeblack.jpg" />
+
+          <span class="card-title">{{venture.Business_name}}</span>
+        </div>
+        <a
+          class="btn-floating halfway-fab waves-effect waves-light red click-to-toggle"
+          ><i class="material-icons">add</i></a>
+          <div class="collapsible-body">
+            <span>
+              Net worth: {{venture.net_worth}}<br />
+              Amount needed to invest: {{venture.Min_investment}}<br />
+              Returns: {{venture.percentage_return}}</span
+            >
+          </div>
         
+        <div class="card-content">
+          <a
+            href="{{url_for('delete_venture', venture_id=venture._id)}}"
+            class="waves-effect waves-light btn btn_small"
+            >Delete</a
+          >
+          <a
+            href="{{url_for('edit_venture', venture_id=venture._id)}}"
+            class="waves-effect waves-light btn btn_small"
+            >edit</a
+          >
+        </div>
+
+        <div></div>
+      </div>
     
-       
-       
-        
-    {% endfor %}
+    </div>
+    {%- elif loop.index0 % 3 == 1 or loop.last -%}
+    
+    <div class="col-lg-3">
+      <div class="card small">
+     
+        <div class="card-image">
+          <img src="static/images/coffeeeblack.jpg" />
+
+          <span class="card-title">{{venture.Business_name}}</span>
+        </div>
+        <a
+          class="btn-floating halfway-fab waves-effect waves-light red click-to-toggle"
+          ><i class="material-icons">add</i>
+          <div class="collapsible-body">
+            <span>
+              Net worth: {{venture.net_worth}}<br />
+              Amount needed to invest: {{venture.Min_investment}}<br />
+              Returns: {{venture.percentage_return}}</span
+            >
+          </div>
+        </a>
+        <div class="card-content">
+          <a
+            href="{{url_for('delete_venture', venture_id=venture._id)}}"
+            class="waves-effect waves-light btn btn_small"
+            >Delete</a
+          >
+          <a
+            href="{{url_for('edit_venture', venture_id=venture._id)}}"
+            class="waves-effect waves-light btn btn_small"
+            >edit</a
+          >
+        </div>
+
+        <div></div>
+      </div>
+    
+    </div>
+    {% else %}
+    <div class="col-lg-3">
+      <div class="card small">
+     
+        <div class="card-image">
+          <img src="static/images/coffeeeblack.jpg" />
+
+          <span class="card-title">{{venture.Business_name}}</span>
+        </div>
+        <a
+          class="btn-floating halfway-fab waves-effect waves-light red click-to-toggle"
+          ><i class="material-icons">add</i>
+          <div class="collapsible-body">
+            <span>
+              Net worth: {{venture.net_worth}}<br />
+              Amount needed to invest: {{venture.Min_investment}}<br />
+              Returns: {{venture.percentage_return}}</span
+            >
+          </div>
+        </a>
+        <div class="card-content">
+          <a
+            href="{{url_for('delete_venture', venture_id=venture._id)}}"
+            class="waves-effect waves-light btn btn_small"
+            >Delete</a
+          >
+          <a
+            href="{{url_for('edit_venture', venture_id=venture._id)}}"
+            class="waves-effect waves-light btn btn_small"
+            >edit</a
+          >
+        </div>
+
+        <div></div>
+      </div>
+    
+    </div>
+  </div>
+  
+
+
+{% endif %}
+</div>
+{% endfor %}
+<a
+  href="{{url_for('new_venture')}}"
+  class="waves-effect waves-circle waves-light btn-floating secondary-content"
+>
+  <i class="material-icons">add</i>
+</a>
 
 {% endblock %}
+

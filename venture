@@ -1,0 +1,3 @@
+{"_id":"H1","Business_name":"hopeonthehill","net_worth":0,"Min_investment":200,"percentage_return":2}
+{"_id":{"$oid":"5f80a4fbbd570c43893050c0"},"Business_name":"Cheboss","net_worth":150,"Min_investment":200,"percentage_return":10}
+{"_id":{"$oid":"5f80a51cbd570c43893050c1"},"Business_name":"KleanTeam","net_worth":5000,"Min_investment":2000,"percentage_return":2}

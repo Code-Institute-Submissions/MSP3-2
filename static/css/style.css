@@ -1,0 +1,30 @@
+body {
+  background-color: whitesmoke;
+ 
+}
+
+nav {
+  background-color: #708090;
+}
+nav.li {
+  padding: 10px;
+}
+.btn_small {
+  height: 24px;
+  width: 60px;
+  line-height: 24px;
+  margin: 5px 5px;
+  padding: 0 0.5em;
+  background-color: #708090;
+}
+
+.grid-container {
+  display: grid;
+   grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 5px;
+  margin: 5px;
+  
+}
+.venture_headder {
+  margin-top: 5px;
+}
