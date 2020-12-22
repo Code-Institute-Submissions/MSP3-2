@@ -1,41 +1,98 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# MSP3
 
-Welcome Mya,
+## Project Purpose
+A website that displays content and upcoming shows for an upcoming rapper to reach out to their audience. The website also allows users to view the locations of concerts with google maps api. It will increase the artist sales, streams and opportunity to get signed or have endorsements from companies.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+## UX design
+![Image of demo](Documentation/)
 
-## Gitpod Reminders
+## User
+The users of this site are potential investors in business start ups.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### User stories
+* A Investor looking for a new investment
+* A supporter of a business looking to help with investments
 
-`python3 -m http.server`
+## Design
+The color scheme consists of blue and white for a professional and modern look, which corresponds well with the users of the website who will be invetors.
 
-A blue button should appear to click: *Make Public*,
+### Mockups
+The web page has mutiple pages with one page that opens directly to their spotify. This can be seen in the wireframe:
 
-Another blue button should appear to click: *Open Browser*.
+* [Wireframe](https://www.figma.com/file/Q8aKmRRdNYh4YDcPlgk7Tz/investsmart?node-id=0%3A1)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## Features
 
-A blue button should appear to click: *Make Public*,
+### Planned features 
 
-Another blue button should appear to click: *Open Browser*.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
+* Documentation - ReadMe File & Mockups
+* Materalize
+  * HTML
+  * CSS 
+  * JS
+  * framework (grid system, buttons, modals, jumbotron, cards)- This makes the website more interactive and is easier for users to use. 
+* Interactive google maps API
+* GitHub -Remote Repository- Allows cohesive and easy collaborations, which helps to create a smooth and responsive website.
+* GitHub pages - Deployed
+* Heruko
+* MongoDB
 
-## Updates Since The Instructional Video
+### Future Features 
+In the future, I would allow users to be able to follow other investors and see their investents. 
 
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
+## Technologies used
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML#:~:targetText=HTML%20(HyperText%20Markup%20Language)%20is,functionality%2Fbehavior%20(JavaScript).)
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS#:~:targetText=Cascading%20Style%20Sheets%20(CSS)%20is,speech%2C%20or%20on%20other%20media.)
+* [JS](https://www.javascript.com/)
+* [Google chrome](https://www.google.com/chrome/)
+* [Google](https://www.google.com/)
+* [Materalize](https://materializecss.com/)
+* [Visual Studio One](https://code.visualstudio.com/)
+* [Github](https://github.com/)
+* [Gitpod](https://gitpod.io/)
+* [Figma](https://gitpod.io/)
+* [MongoDB](https://www.mongodb.com/)
+* [Slack](https://slack.com/intl/en-gb/)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed along with other common files.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+## Testing
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+The website is easily accessible and allows supporters to find out more about the artist from the about page. The many pictures of the artist give those wanting to collaborate a good understanding of his image. The videos on youtube play while on the website when pressed and show the artist talents for supporters and possible talent recruiter. The social media icons help more supporters to connect with the artist. They highlight when they hovered on and go straight to these social media sites once clicked. All links on the site and the button for Spotify open in a new tab due to the 'target="blank"'.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
---------
+I used different browsers to test this site, this included:
+* Internet Explorer
+* Google Chrome 
+* Safari
 
-Happy coding!
+Also, different devices were used, this includes :
+
+* Samsung 8
+* IPhone 6
+* Macbook 
+* Ipad mini
+* Ipad pro
+### Issues fixed
+
+
+## Deployment
+This website is hosted on [Github Pages](https://coexisting.github.io/Milestone-Project-1/) deployed using the master branch, explained [Here](https://help.github.com/en/github/getting-started-with-github/create-a-repo). The deployed site updates automatically upon new commits to the master branch. For the site to deploy correctly on GitHub pages, the landing page must be named index.html. This along with the Read.Me can be found in the root folder.
+
+This can be run locally by cloning the repository  https://coexisting.github.io/FEEKO-msp2/ and pasting into your code IDE terminal. The website can be run by opening the HTML file within a web browser. The link provided can be visited and your website with any made changes will appear.
+
+
+## Credit
+### Media
+All images were from google and are not owned by me.
+### Content
+All content was written by me for the website.
+
+### Acknowledgment
+For all the help and inspiration:
+* Code Institute
+* [Slack](https://slack.com/intl/en-gb/) community
+* [Stack overflow] (https://stackoverflow.com/) 
+* Seun Owonikoko @seun_mentor
+
