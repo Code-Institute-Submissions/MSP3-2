@@ -1,0 +1,144 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="back">
+  <div class="carousel carousel-slider center">
+    <div class="carousel-fixed-item center">
+      <a
+        href="{{url_for('all_ventures', venture_id=venture._id)}}"
+        class="btn btn-medium waves-effect darken-text-2"
+        >More ventures</a
+      >
+    </div>
+    <div class="carousel-item white-text" href="#one!">
+      <div class="title-container">
+      <h2>Invest in small Businesses</h2>
+
+      <p class="white-text">Be one of the first!</p>
+    </div>
+    </div>
+   
+    <div class="carousel-item white-text" href="#two!">
+     <div class="title-container">
+      <h2>Top Ventures</h2>
+      <p class="white-text">This is your second panel</p>
+    </div></div>
+  </div>
+</div>
+
+<div>
+  <h2 class="page-title">Top Ventures</h2>
+</div>
+<div class="grid-container">
+  {% for venture in venture %} {% if loop.index0 % 3 == 0 %}
+  <div class="row">
+    <div class="col-lg-3">
+      <div class="card small">
+        <div class="card-image">
+          <img src="static/images/coffeeeblack.jpg" />
+
+          <span class="card-title">{{venture.Business_name}}</span>
+        </div>
+        <div class="collapsible-header">
+          <a
+            id="button1"
+            class="round-button halfway-fab waves-effect waves-light red click"
+            ><i class="material-icons">add</i></a
+          >
+          <div class="card-content">
+            <a
+              href="{{url_for('new_investment', Investor_id=Investor._id)}}"
+              class="waves-effect waves-light btn btn_small"
+              >Invest</a
+            >
+          </div>
+        </div>
+        <div id="CB1" class="collapsible-body">
+          <span>
+            Net worth: {{venture.net_worth}}<br />
+            Amount needed to invest: {{venture.Min_investment}}<br />
+            Returns: {{venture.percentage_return}}</span
+          >
+        </div>
+      </div>
+    </div>
+    {%- elif loop.index0 % 3 == 1 -%}
+
+    <div class="col-lg-3">
+      <div class="card small">
+        <div class="card-image">
+          <img src="static/images/coffeeeblack.jpg" />
+
+          <span class="card-title">{{venture.Business_name}}</span>
+        </div>
+        <div class="collapsible-header">
+          <a
+            id="button2"
+            class="round-button halfway-fab waves-effect waves-light red click"
+            ><i class="material-icons">add</i></a
+          >
+          <div class="card-content">
+            <a
+              href="{{url_for('new_investment', Investor_id=Investor._id)}}"
+              class="waves-effect waves-light btn btn_small"
+              >Invest</a
+            >
+          </div>
+        </div>
+        <div id="CB2" class="collapsible-body">
+          <span>
+            Net worth: {{venture.net_worth}}<br />
+            Amount needed to invest: {{venture.Min_investment}}<br />
+            Returns: {{venture.percentage_return}}</span
+          >
+        </div>
+
+        <div></div>
+      </div>
+
+      {% else %}
+      <div class="col-lg-3">
+        <div class="card small">
+          <div class="card-image">
+            <img src="static/images/coffeeeblack.jpg" />
+
+            <span class="card-title">{{venture.Business_name}}</span>
+          </div>
+          <div class="collapsible-header">
+            <a
+              id="button3"
+              class="round-button halfway-fab waves-effect waves-light red click"
+              ><i class="material-icons">add</i></a
+            >
+            <div class="card-content">
+              <a
+                href="{{url_for('new_investment', Investor_id=Investor._id)}}"
+                class="waves-effect waves-light btn btn_small"
+                >Invest</a
+              >
+            </div>
+          </div>
+          <div id="CB3" class="collapsible-body">
+            <span>
+              Net worth: {{venture.net_worth}}<br />
+              Amount needed to invest: {{venture.Min_investment}}<br />
+              Returns: {{venture.percentage_return}}</span
+            >
+          </div>
+
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% endif %}
+</div>
+{% endfor %}
+<a
+  href="{{url_for('new_venture')}}"
+  class="waves-effect waves-circle waves-light btn-floating secondary-content"
+>
+  <div><i class="material-icons">add</i></div>
+</a>
+
+{% endblock %}

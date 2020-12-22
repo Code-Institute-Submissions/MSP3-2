@@ -1,30 +1,383 @@
+@use postcss-color-function;
+@use postcss-nested;
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
 body {
   background-color: whitesmoke;
- 
 }
 
 nav {
-  background-color: #708090;
+  background-color: #4682b4;
 }
 nav.li {
   padding: 10px;
 }
+
+.brand-logo {
+  font-family: "Righteous", cursive;
+  align-items: center;
+  justify-content: center;
+  left: 2px;
+  right: 2px;
+}
 .btn_small {
-  height: 24px;
-  width: 60px;
+  height: 20px;
+  width: 70px;
   line-height: 24px;
   margin: 5px 5px;
   padding: 0 0.5em;
-  background-color: #708090;
+  background-color: #4682b4;
 }
 
-.grid-container {
-  display: grid;
-   grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 5px;
-  margin: 5px;
+.btn-medium {
+  width: 150;
+  line-height: 24px;
+  margin: 5px 5px;
+  padding: 0 0.5em;
+  background-color: #4682b4;
+  color: white;
+}
+form{
+    margin: 10px 20px;
+    border: #41bb8a  1px;
+    border-style: solid;
+    background-color: white;
+}
+
+.input-field label {
+     color: #000;
+   }
   
+.form-field{
+    margin: auto 20px 10px!important;
+}
+
+ .back{
+    background: url("../images/buildingb.jpg") no-repeat center center #4682b4 !important;
+    background-blend-mode: multiply;
+    background-size: cover;
+    width: 100%;
+    }
+
+.panel2 {
+  background-color: #41bb8a !important;
+}
+
+.panel3 {
+  background-color: #ffb958 !important;
+}
+
+.panel4 {
+  background-color: #5654bf !important;
+}
+.grid-container {
+  grid-template-columns: repeat(3, 1fr);
+
+  margin: 10px;
+  padding-top: 10px;
+  font-family: "Righteous", cursive;
+  align-items: center;
+}
+
+.card {
+  width: 80%;
+  margin: 10%;
+  align-items: center;
 }
 .venture_headder {
   margin-top: 5px;
+}
+
+.collapsible-header {
+  outline: none;
+  background-color: white;
+}
+
+.collapsible-body {
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: white;
+}
+
+.round-button {
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  display: block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-decoration: none;
+  background-color: #4682b4;
+}
+
+.searchBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:  translate(-50%,50%);
+    background: #2f3640;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+
+}
+
+.searchBox:hover > .searchInput {
+    width: 240px;
+    padding: 0 6px;
+}
+
+.searchBox:hover > .searchButton {
+  background: white;
+  color : #2f3640;
+}
+
+.searchButton {
+    color: white;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.searchInput {
+    border:none;
+    background: none;
+    outline:none;
+    float:left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+
+}
+
+.page-title{
+    font-family: "Righteous", cursive;
+  text-align: center;
+  font-size: 25px;
+  margin: 5 auto;
+  color: #4682b4;
+}
+
+@media only screen and (min-width:1024px){
+  body {
+    background-color: whitesmoke;
+  }
+
+  nav {
+  background: rgb(0,0,0,0.2);
+  position: fixed;
+ 
+  
+}
+  nav li {
+    padding: 10px;
+  }
+
+ nav li:hover{
+background:#ffb958;
+ }
+  .brand-logo {
+    font-family: "Righteous", cursive;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn_small {
+    height: 24px;
+    width: 100px;
+    line-height: 24px;
+    margin: 5px 5px;
+    padding: 0 0.5em;
+    background-color: #4682b4;
+  }
+
+  .btn-medium {
+    width: 150px;
+    line-height: 24px;
+    margin: 5px 5px;
+    padding: 0 0.5em;
+    background-color: #4682b4;
+    color: white;
+  }
+form{
+    margin: 0px 20px;
+    border: #41bb8a  1px;
+    border-style: solid;
+    background-color: white;
+}
+.form-border{
+    margin:20px ;
+    padding: 30px;
+    width:40%;
+    height: 20%
+}
+.input-field label {
+    font-size: 15px;
+     color: #000;
+     margin: 1px;
+     
+     
+   }
+  
+.form-field{
+    margin: 0px!important;
+}
+
+  .back{
+    background: url("../images/buildingb.jpg") no-repeat 0, 0 #4682b4!important;
+    background-blend-mode: multiply;
+    background-size: cover!important;
+      -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  width: 100% ;
+ 
+   }
+   .carousel-item{
+     align-items: center;
+  left: 50%;
+  top: 50%;
+   }
+  .panel2 {
+    background-color: #41bb8a !important;
+  }
+
+  .panel3 {
+    background-color: #ffb958 !important;
+  }
+
+  .panel4 {
+    background-color: #5654bf !important;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 30px 50px;
+    padding-top: 20px;
+    font-family: "Righteous", cursive;
+  }
+
+  .card {
+    width: 70%;
+    margin: 5%;
+  }
+  .venture_headder {
+    margin-top: 5px;
+  }
+
+  .collapsible-header {
+    outline: none;
+    background-color: white;
+  }
+
+  .collapsible-body {
+    padding: 0 18px;
+    display: block;
+    overflow: hidden;
+    background-color: white;
+  }
+
+  .round-button {
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    display: block;
+    width: 50px;
+    height: 40px;
+    line-height: 40px;
+    text-decoration: none;
+    background-color: #4682b4;
+  }
+/*search*/
+ .searchBox {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    transform:  translate(-50%,50%);
+    background: #2f3640;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+
+}
+
+.searchBox:hover > .searchInput {
+    width: 240px;
+    padding: 0 6px;
+}
+
+.searchBox:hover > .searchButton {
+  background: white;
+  color : #2f3640;
+}
+
+.searchButton {
+    color: white;
+    float: left;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.searchInput {
+    border:none;
+   border-bottom: none;
+    outline:none;
+    float:left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 20px;
+    width: 0px;
+
+}
+
+input{
+    border-bottom: none !important;
+}
+  .row{
+      margin: 5px;
+  }
+
+  select#Business_name.validate{
+      margin-top: 35px !important;
+
+  }
+
+  .searchBox:hover > .searchInput {
+    width: 150px;
+    padding: 0 6px;
+    }
+.title-container{
+    top:50%;
+    
+    padding:30px 0px 5px;
+
+}
+    .page-title{
+    font-family: "Righteous", cursive;
+  text-align: center;
+  font-size: 50px;
+  margin: 30px auto;
+  padding: 10px;
+  color: #4682b4;
+
+
+}
+
 }

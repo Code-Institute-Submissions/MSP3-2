@@ -1,81 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
- 
-<!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css">
-    
-   
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/style.css')}}"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>InvestSmartBLM</title>
-</head>
-<body>
-<header> 
-   <!-- top navbar -->
-		<nav class="nav-extended text-shadow ">
-			<div class="nav-wrapper">
-				<a href="{{ url_for('get_venture') }}" class="brand-logo">InvestSmart</a>
-				<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
-				<ul class="right hide-on-med-and-down">
-					<li><a href="{{ url_for('get_venture') }}">Home</a></li>
-                    {% if session.user %}
-                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-        
-        <li><a href="{{url_for('new_investor')}}"></a>Invest</li>
-                       
-                        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-                    {% else %}
-                        <li><a href="{{ url_for('login') }}">Log In</a></li>
-                        <li><a href="{{ url_for('register') }}">Register</a></li>
-                    {% endif %}
-				</ul>
-			</div>
-		</nav>
-
-        <!-- mobile sidenav -->
-		<ul class="sidenav" id="mobile-demo">
-            <li><h4 class="center-align light-blue-text text-darken 4">InvestSmartBLM</h4></li>
-            <li><a href="{{ url_for('get_venture') }}">Home</a></li>
+  </head>
+  <body>
+    <header>
+      <!-- top navbar -->
+      <nav class="nav-extended text-shadow">
+        <div class="nav-wrapper">
+          <a href="{{ url_for('top_venture')}}" class="brand-logo center-align"
+            >InvestSmart</a
+          >
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger right"
+            ><i class="fas fa-bars"></i
+          ></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="{{ url_for('top_venture')}}">Home</a></li>
+            <li><a href="{{ url_for('all_ventures')}}">Ventures</a></li>
             {% if session.user %}
-                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                <li><a href="{{ url_for('new_investor') }}">New Investor</a></li>
-             
-                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            <li>
+              <a href="{{ url_for('profile', username=session['user']) }}"
+                >Profile</a
+              >
+            </li>
+
+            <li><a href="{{url_for('new_investor')}}"></a>Invest</li>
+
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
-                <li><a href="{{ url_for('login') }}">Log In</a></li>
-                <li><a href="{{ url_for('register') }}">Register</a></li>
+            <li><a href="{{ url_for('login') }}">Log In</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
             {% endif %}
-		</ul>
-   </header>
+          </ul>
+        </div>
+      </nav>
 
-   {% block content %}
-   
+     
+    </header>
 
-  
+    {% block content %} {% endblock %}
 
-   {% endblock %}
-
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript">
+      $(document).ready(function () {
+        $(".sidenav").sidenav();
+      });
 
+      $(".carousel.carousel-slider").carousel({
+        fullWidth: true,
+        indicators: true,
+      });
+      $(document).ready(function () {
+        $(".fixed-action-btn").floatingActionButton();
+      });
 
-     $(document).ready(function(){
-    $('.sidenav').sidenav();
-  });
+      $("#CB1").hide("slow");
+      $("#button1").click(function () {
+        $("#CB1").toggle("slow");
+      });
 
-  $(document).ready(function(){
+      $("#CB2").hide("slow");
+      $("#button2").click(function () {
+        $("#CB2").toggle("slow");
+      });
+
+      $("#CB3").hide("slow");
+      $("#button3").click(function () {
+        $("#CB3").toggle("slow");
+      });
+
+      $("#CB4").hide("slow");
+      $("#button4").click(function () {
+        $("#CB4").toggle("slow");
+      });
+
+      $("#CB5").hide("slow");
+      $("#button5").click(function () {
+        $("#CB5").toggle("slow");
+      });
+
+      $("#CB6").hide("slow");
+      $("#button6").click(function () {
+        $("#CB6").toggle("slow");
+      });
+
+       $(document).ready(function(){
     $('.collapsible').collapsible();
   });
- $(document).ready(function(){
-    $('.fixed-action-btn').floatingActionButton();
-  });
- 
-  </script>
-   <li><a href="{{url_for('get_venture')}}"></a> Venture</li>
-        <li><a href="{{url_for('new_investor')}}"></a>Invest</li>
-</body>
+    </script>
+  </body>
 </html>

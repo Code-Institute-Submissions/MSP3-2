@@ -1,55 +1,66 @@
 {% extends 'base.html' %}
 {% block content %}
-<h3>New investor</h3>
-<div class="row">
-	<form action="{{url_for('insert_investor')}}" method="POST" class="col s12">
-		<div class="row">
-			<div class="input-field col s6">
-				<input placeholder="Placeholder" id="First_name" name="First_name" type="text" class="validate">
+<div class="back">
+<div class="title-container">  
+ <h2 class="page-title">New Investments</h2>
+</div>
+<div class="form-border">
+
+	<form action="{{url_for('new_investment')}}" method="POST" class="col s12">
+		<div class="title-container">  
+ <h2 class="page-title">Investment form</h2>
+</div>
+        <div class="row form-field">
+			<div class="input-field col s12">
+				<input id="First_name" name="First_name" type="text" class="validate">
 				<label for="First_name">First Name</label>
 			</div>
-			<div class="input-field col s6">
+		</div>
+            <div class="row form-field">
+			<div class="input-field col s12">
 				<input id="Last_name" type="text" name="Last_name" class="validate">
 				<label for="Last_name">Last Name</label>
 			</div>
 		</div>
-		<div class="row">
-			<div class="input-field col s6">
-				<input id="Business_name" type="text" name="Business_name" class="validate">
-				<label for="Business_name">Choose venture</label>
-				<select class="browser-default">
-    <option value="" disabled selected>Choose your option</option>
+		
+		<div class="row form-field">
+			<div class="input-field col s12">
+				<select id="Business_name"  type ="text" name="Business_name" class="browser-default validate" required>
+    <option value="{{ venture.Business_name }}" >Choose venture</option>
     {% for venture in venture %}
-    <option value="{{venture.Business_name}}">{{venture.Business_name}}</option>
+    <option value="{{ venture.Business_name }}">{{venture.Business_name}}</option>
     {% endfor %}
   </select>
+
 			</div>
-			<div class="input-field col s6">
+		</div>
+        <div class="row form-field">
+			<div class="input-field col s12">
 				<span class="material-icons">credit_card</span>
-				<input disabled value="$1000" id="money_invested" type="text" name="money_invested" class="validate">
+				<input  id="money_invested" type="text" name="money_invested" class="validate">
 				<label for="money_invested">Money to invest</label>
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row form-field">
 			<div class="input-field col s12">
 				<input id="email" type="email" name="email" class="validate">
 				<label for="email">Email</label>
 			</div>
 		</div>
-		<div class="row">
-			<div class="input-field col s6">
+		<div class="row form-field">
+			<div class="input-field col s12">
 				<input id="estimated_Profit" type="text" name="estimated_Profit" class="validate">
-				<label for="estimated_Profit"></label>
+				<label for="estimated_Profit">Estimated Profit</label>
 			</div>
 		</div>
-        <div class="row">
-         <button class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="material-icons right">Send request</i>
+		<div class="row form-field">
+			<button class="btn waves-effect waves-light" type="submit" name="action">Send request
   </button>
-        </div>
+		</div>
 	</form>
 </div>
-
+</div>
 
 
 {% endblock %}

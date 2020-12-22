@@ -1,12 +1,12 @@
 
 {% extends 'base.html' %}
 {% block content %}
-<h3>Edit Business</h3>
+<h3>Edit Investment</h3>
 <div class="row">
-	<form action="{{url_for('update_venture', venture_id=venture._id)}}" method="POST" class="col s12">
+	<form action="{{url_for('edit_Investment', Investor_id=Invest._id, venture_id=venture._id )}}" method="POST" class="col s12">
 		<div class="row">
 			<div class="input-field col s6">
-				<input placeholder="Tesco " id="Business_name" name="Business_name" type="text" class="validate" value="{{venture.Business_name}}">
+				<input placeholder="Tesco " id="Business_name" name="Business_name" type="text" class="validate" value="{{ venture.Business_name }}">
 				<label for="Business_name">Business Name</label>
 			</div>
 			<div class="input-field col s6">

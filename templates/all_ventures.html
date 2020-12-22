@@ -1,0 +1,132 @@
+{% extends 'base.html' %} {% block content %}
+
+
+    <!--    <div class="searchBox">
+ <button class="searchButton" href="#">
+                <i class="material-icons">
+                    search
+                </i>
+         
+            <input class="searchInput"type="text" name="" placeholder="Search">
+            
+        </div>
+        -->
+<div class="title-container">  
+ <h2 class="page-title">Ventures</h2>
+</div>
+<div class="grid-container">
+  {% for venture in venture %} {% if loop.index0 % 3 == 0 %}
+  <div class="row">
+    <div class="col-lg-3">
+      <div class="card small">
+        <div class="card-image">
+          <img src="static/images/coffeeeblack.jpg" />
+
+          <span class="card-title">{{venture.Business_name}}</span>
+</div>
+          <div class="collapsible-header">
+            <a id="button4"
+              class="round-button halfway-fab waves-effect waves-light red click"
+              ><i class="material-icons ">add</i></a
+            >
+          </div>
+          <div id="CB4" class="collapsible-body">
+            <span>
+              Net worth: {{venture.net_worth}}<br />
+              Amount needed to invest: {{venture.Min_investment}}<br />
+              Returns: {{venture.percentage_return}}</span
+            >
+          </div>
+
+          <div class="card-content">
+            <a
+             href="{{url_for('new_investment', Investor_id=Investor._id)}}"
+              class="waves-effect waves-light btn btn_small"
+              >Invest</a
+            >
+            
+          
+
+          <div></div>
+        </div>
+      </div>
+    </div>
+    {%- elif loop.index0 % 3 == 1 -%}
+
+    <div class="col-lg-3">
+      <div class="card small">
+        <div class="card-image">
+          <img src="static/images/coffeeeblack.jpg" />
+
+          <span class="card-title">{{venture.Business_name}}</span>
+        </div>
+        <div class="collapsible-header">
+         <a id="button5"
+              class="round-button halfway-fab waves-effect waves-light red click"
+              ><i class="material-icons ">add</i></a
+            >
+          </div>
+          <div id="CB5" class="collapsible-body">
+          <span>
+            Net worth: {{venture.net_worth}}<br />
+            Amount needed to invest: {{venture.Min_investment}}<br />
+            Returns: {{venture.percentage_return}}</span
+          >
+        </div>
+        <div class="card-content">
+         <a
+              href="{{url_for('new_investment', Investor_id=Investor._id)}}"
+              class="waves-effect waves-light btn btn_small"
+              >Invest</a
+            >
+        </div>
+
+        <div></div>
+      </div>
+
+      {% else %}
+      <div class="col-lg-3">
+        <div class="card small">
+          <div class="card-image">
+            <img src="static/images/coffeeeblack.jpg" />
+
+            <span class="card-title">{{venture.Business_name}}</span>
+          </div>
+          <div class="collapsible-header">
+            <a id="button6"
+              class="round-button halfway-fab waves-effect waves-light red click"
+              ><i class="material-icons ">add</i></a
+            >
+          </div>
+          <div id="CB6" class="collapsible-body">
+            <span>
+              Net worth: {{venture.net_worth}}<br />
+              Amount needed to invest: {{venture.Min_investment}}<br />
+              Returns: {{venture.percentage_return}}</span
+            >
+          </div>
+          <div class="card-content">
+            <a
+              href="{{url_for('new_investment', Investor_id=Investor._id)}}"
+              class="waves-effect waves-light btn btn_small"
+              >Invest</a
+            >
+          </div>
+
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% endif %}
+</div>
+{% endfor %}
+<a
+  href="{{url_for('new_venture')}}"
+  class="waves-effect waves-circle waves-light btn-floating secondary-content"
+>
+ <div> <i class="material-icons">add</i>  </div>
+</a>
+
+{% endblock %}

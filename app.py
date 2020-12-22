@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, flash, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -17,19 +17,37 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+
 @app.route('/')
 # display venture
-@app.route('/get_venture')
-def get_venture():
+@app.route('/top_venture')
+def top_venture():
     venture = mongo.db.Venture.find()
-    return render_template("venture.html", venture=venture)
+    Investor = mongo.db.Investor.find()
+    return render_template("home.html", venture=venture, Investor=Investor)
+
+
+# display investemnts
+@app.route('/investments')
+def investments():
+    Investor = mongo.db.Investor.find()
+    venture = mongo.db.Venture.find()
+    return render_template("investments.html", Investor=Investor, venture=venture)
+    
+
+# all venture
+@app.route('/all_ventures')
+def all_ventures():
+    venture = mongo.db.Venture.find()
+    Investor = mongo.db.Investor.find()
+    return render_template("all_ventures.html", venture=venture, Investor=Investor)
 
 # investor form
 
 
-@app.route('/new_investor')
-def new_investor():
-    return render_template("investor.html", venture=mongo.db.Venture.find())
+@app.route('/new_investment')
+def new_investment():
+    return render_template("investor.html", Investor=mongo.db.Investor.find(), venture=mongo.db.Venture.find())
 
 # venture form
 
@@ -49,36 +67,40 @@ def insert_venture():
 
 # submit investment
 @app.route('/insert_investment', methods=['POST'])
-def insert_investor():
-    investor = mongo.db.Investor
-    investor.insert_one(request.form.to_dict())
-    return redirect(url_for('get_investor'))
+def insert_investment():
+    Investor = mongo.db.Investor
+    Investor.insert_one(request.form.to_dict())
+    return redirect(url_for('investments'))
 
 
-@app.route('/edit_venture/<venture_id>')
-def edit_venture(venture_id):
-    the_venture = mongo.db.Venture.find_one({"_id": ObjectId(venture_id)})
-    return render_template('editventure.html', venture=the_venture)
-
-
-@app.route('/update_venture/<venture_id>', methods=["POST"])
-def update_venture(venture_id):
+@app.route('/edit_Investment/<Investor_id>')
+def edit_Investment(Investor_id):
+    the_invest = mongo.db.Investor.find_one({"Investor_id": ObjectId(Investor_id)})
     venture = mongo.db.Venture
-    venture.update({'_id: ObjectId(venture_id)'},
-                   {
+    return render_template('editinvestment.html', Invest=the_invest, venture=venture)
+
+
+@app.route('/update_investment/<Invest_id>', methods=["POST"])
+def update_investment(Invest_id):
+    invest = mongo.db.Investor
+    venture = mongo.db.Venture.find().sort("Business_name", 1)
+    invest.update({'_id: ObjectId(Invest_id)'},
+                  {
+        'First_name': request.form.get('First_name'),
+        'Last_name': request.form.get('Last_name'),
         'Business_name': request.form.get('Business_name'),
-        'net_worth': request.form.get('net_worth'),
-        'Min_investment': request.form.get('Min_investment'),
-        'percentage_return': request.form.get('percentage_return')
+        'actual_profit': request.form.get('actual_profit'),
+        'money_invested': request.form.get('money_invested'),
+        'estimated_Profit': request.form.get('estimated_Profit')
     })
-    return redirect(url_for('get_venture'))
+    return render_template('investments.html', invest=invest, venture=venture)
 
 
-@app.route('/delete_venture/<venture_id>')
-def delete_venture(venture_id):
-    mongo.db.Venture.remove({'_id': ObjectId(venture_id)})
-    return redirect(url_for('get_venture'))
-
+@app.route('/delete_Investment/<Investor_id>')
+def delete_Investment(Investor_id):
+    mongo.db.Investor.remove({'_id': ObjectId(Investor_id)})
+    flash("Investment Deleted")
+    return redirect(url_for('investments'))
 
 
 @app.route("/register", methods=["GET", "POST"])
