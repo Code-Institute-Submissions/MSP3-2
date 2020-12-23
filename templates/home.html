@@ -1,5 +1,5 @@
-{% extends 'base.html' %} {% block content %}
-
+{% extends 'base.html' %}
+{% block content %}
 <div class="back">
   <div class="carousel carousel-slider center">
     <div class="carousel-fixed-item center">
@@ -134,11 +134,6 @@
   {% endif %}
 </div>
 {% endfor %}
-<a
-  href="{{url_for('new_venture')}}"
-  class="waves-effect waves-circle waves-light btn-floating secondary-content"
->
-  <div><i class="material-icons">add</i></div>
-</a>
+
 
 {% endblock %}

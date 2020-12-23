@@ -40,7 +40,7 @@ def investments():
 def all_ventures():
     venture = mongo.db.Venture.find()
     Investor = mongo.db.Investor.find()
-    return render_template("all_ventures.html", venture=venture, Investor=Investor)
+    return render_template("ventures.html", venture=venture, Investor=Investor)
 
 # investor form
 

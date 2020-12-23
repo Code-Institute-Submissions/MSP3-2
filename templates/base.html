@@ -23,6 +23,8 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     {% block styles %}
+    {% endblock %}
     <title>InvestSmartBLM</title>
   </head>
   <body>
@@ -33,26 +35,14 @@
           <a href="{{ url_for('top_venture')}}" class="brand-logo center-align"
             >InvestSmart</a
           >
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger right"
+          <a href="#" data-target="mobile-demo" class="sidenav sidenav-trigger left"
             ><i class="fas fa-bars"></i
           ></a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="{{ url_for('top_venture')}}">Home</a></li>
-            <li><a href="{{ url_for('all_ventures')}}">Ventures</a></li>
-            {% if session.user %}
-            <li>
-              <a href="{{ url_for('profile', username=session['user']) }}"
-                >Profile</a
-              >
-            </li>
-
-            <li><a href="{{url_for('new_investor')}}"></a>Invest</li>
-
-            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-            {% else %}
-            <li><a href="{{ url_for('login') }}">Log In</a></li>
-            <li><a href="{{ url_for('register') }}">Register</a></li>
-            {% endif %}
+          <ul class="left hide-on-med-and-down ">
+            <li><a href="{{ url_for('top_venture') }}">Home</a></li>
+            <li><a href="{{ url_for('all_ventures') }}">Venture</a></li>
+           
+            
           </ul>
         </div>
       </nav>
@@ -111,5 +101,7 @@
     $('.collapsible').collapsible();
   });
     </script>
+     {% block scripts %}
+    {% endblock %}
   </body>
 </html>
