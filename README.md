@@ -1,8 +1,7 @@
 # MSP3
 
 ## Project Purpose
-A website that displays content and upcoming shows for an upcoming rapper to reach out to their audience. The website also allows users to view the locations of concerts with google maps api. It will increase the artist sales, streams and opportunity to get signed or have endorsements from companies.
-
+A website that displays small ventures in need of capital. It allows people looking to invet and those looking for investment to connect.
 ## UX design
 ![Image of demo](Documentation/msp3.png)
 
@@ -31,7 +30,7 @@ The web page has mutiple pages with one page that opens directly to their spotif
   * HTML
   * CSS 
   * JS
-  * framework (grid system, buttons, modals, jumbotron, cards)- This makes the website more interactive and is easier for users to use. 
+  * framework (grid system, buttons,jumbotron, cards)- This makes the website more interactive and is easier for users to use. 
 * Interactive google maps API
 * GitHub -Remote Repository- Allows cohesive and easy collaborations, which helps to create a smooth and responsive website.
 * GitHub pages - Deployed
@@ -59,13 +58,13 @@ In the future, I would allow users to be able to follow other investors and see 
 
 ## Testing
 
-The website is easily accessible and allows supporters to find out more about the artist from the about page. The many pictures of the artist give those wanting to collaborate a good understanding of his image. The videos on youtube play while on the website when pressed and show the artist talents for supporters and possible talent recruiter. The social media icons help more supporters to connect with the artist. They highlight when they hovered on and go straight to these social media sites once clicked. All links on the site and the button for Spotify open in a new tab due to the 'target="blank"'.
-
+The website is easily accessible and allows investersto find out more about a potential businedd to invest into from the venture drop down. The investment forms allows users to be able to pass on information to the ventures so they can invest into said venture. The ventures on cards allows users to easily glance ventures without having to scroll through large amounts of paragraphs about the venture.
 
 I used different browsers to test this site, this included:
 * Internet Explorer
 * Google Chrome 
 * Safari
+* Brave
 
 Also, different devices were used, this includes :
 
