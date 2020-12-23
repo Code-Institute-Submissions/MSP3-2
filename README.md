@@ -78,9 +78,7 @@ Also, different devices were used, this includes :
 
 
 ## Deployment
-This website is hosted on [Heroku](https://investsmartblm.herokuapp.com/) deployed using the master branch, explained on github [Here](https://help.github.com/en/github/getting-started-with-github/create-a-repo) and on Heroku [Here](https://devcenter.heroku.com/articles/git#prerequisites-install-git-and-the-heroku-cli). The deployed site updates automatically upon new commits to the master branch. For the site to deploy correctly on GitHub pages, the landing page must be named index.html. This along with the Read.Me can be found in the root folder.
-
-This can be run locally by cloning the repository  https://coexisting.github.io/FEEKO-msp2/ and pasting into your code IDE terminal. The website can be run by opening the HTML file within a web browser. The link provided can be visited and your website with any made changes will appear.
+This website is hosted on [Heroku](https://investsmartblm.herokuapp.com/) deployed using the master branch, explained on github [Here](https://help.github.com/en/github/getting-started-with-github/create-a-repo) and on Heroku [Here](https://devcenter.heroku.com/articles/git#prerequisites-install-git-and-the-heroku-cli). The deployed site updates automatically upon new commits to the master branch.
 
 
 ## Credit
